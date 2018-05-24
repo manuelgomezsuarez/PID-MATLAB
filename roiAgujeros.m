@@ -64,7 +64,7 @@ num_cero_celdas=num_cero_celdas(1);
 num_uno_celdas=size(uno_celdas);
 num_uno_celdas=num_uno_celdas(1);
 
-num_euler=abs(num_cero_celdas-num_uno_celdas+num_dos_celdas);
+num_euler=num_cero_celdas-num_uno_celdas+num_dos_celdas;
 num_agujeros=1-num_euler;
 num_cc=1;
 subplot(2,2,2)
@@ -72,10 +72,10 @@ imagesc(A)
 
 hold on
 
-scatter(out(:,1)+1,out(:,2)+1,50,[1 1 1],'filled','square')
+scatter(out(:,1)+1,out(:,2)+1,50,[1 0 1],'filled','square')
 
 msg = cell(6,1);
-msg{1} = sprintf('Número de Euler:%2.0f',num_euler);
+msg{1} = sprintf('Número de Euler:%2.0f',abs(num_euler));
 msg{2} = sprintf('Número de CC:%2.0f',1);
 msg{3} = sprintf('Número de Agujeros:%2.0f',num_agujeros);
 msg{4} = sprintf('Número de 0 celdas:%2.0f',num_cero_celdas);
