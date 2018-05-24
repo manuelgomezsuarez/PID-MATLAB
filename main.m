@@ -7,7 +7,7 @@ if choice=='Euler, agujeros y ROI'
     prompt = {'Enter image name:','Enter coordinate x seed pixel:','Enter cooordinate y seed pixel'};
     title = 'Input';
     dims = [1 35];
-    definput = {'prueba3x3.jpg','0','0'};
+    definput = {'3x3.jpg','0','0'};
     answer = inputdlg(prompt,title,dims,definput)
 
     imagen=char(answer(1))
@@ -22,7 +22,7 @@ if char(choice)== 'Expansion de semillas'
     prompt = {'Enter image name:','Enter number of seed to filter:','dist min between seeds'};
     title = 'Input';
     dims = [1 35];
-    definput = {'prueba3.jpg','20','10'};
+    definput = {'espalda.jpg','20','10'};
     answer = inputdlg(prompt,title,dims,definput)
 
     imagen=char(answer(1));
