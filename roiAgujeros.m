@@ -82,5 +82,8 @@ msg{4} = sprintf('Número de 0 celdas:%2.0f',num_cero_celdas);
 msg{5} = sprintf('Número de 1 celdas:%2.0f',num_uno_celdas);
 msg{6} = sprintf('Número de 2 celdas:%2.0f',num_dos_celdas);
 mensaje=msgbox(msg,'INFO');
+set(mensaje,'position',[360,100,190,150])
+object_handles = findall(mensaje)
+set( object_handles(4), 'FontSize', 15)
 end
 
