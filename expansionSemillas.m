@@ -3,6 +3,7 @@ function [ res ] = expansionSemillas(imagen,numberSeed,dist)
 %   Detailed explanation goes here
 
 A = imread(imagen); %Lectura de imagen
+
 figure('units','normalized','outerposition',[0 0 1 1])
 subplot(1,3,1,'align')
 imagesc(A)
@@ -34,19 +35,28 @@ M(:,:,5)=B;
 
 seeds=seedGenerator(M,numberSeed,dist);
 
+seeds
+
 subplot(1,3,2)
 imagesc(A)
 hold on
+
+for i=1:size(seeds,1)
+    seeds(i,1)
+    seeds(i,2)
+    circle(seeds(i,1)+1,seeds(i,2)+1,dist)
+end
 scatter(seeds(:,1)+1,seeds(:,2)+1,35,[0 1 0],'filled')
 
 
 szSeeds=size(seeds);
+
 out=[];
 for i=1:szSeeds
     out=[out;cc_from_seed(seeds(i,1),seeds(i,2),M)];
 end
 
-
+%expansionSemillas('6x3.jpg',1,1)
 subplot(1,3,3)
 imagesc(A)
 hold on

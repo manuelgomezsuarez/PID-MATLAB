@@ -49,7 +49,7 @@ for i=1:sz(1)       %iteracion sobre la matriz con muchas semillas
         y2=seedArray2(u,2);
         x2y2=[x2 y2];
         distancia=sqrt((y2-y1)^2+(x2-x1)^2);
-        if distancia < dist 
+        if distancia <= dist 
             valid=valid+1;
         end     
     end

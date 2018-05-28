@@ -22,7 +22,7 @@ if char(choice)== 'Expansion de semillas'
     prompt = {'Enter image name:','Enter number of seed to filter:','dist min between seeds'};
     title = 'Input';
     dims = [1 35];
-    definput = {'espalda.jpg','20','10'};
+    definput = {'espalda.jpg','70','5'};
     answer = inputdlg(prompt,title,dims,definput)
 
     imagen=char(answer(1));
