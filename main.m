@@ -28,5 +28,5 @@ if char(choice)== 'Expansion de semillas'
     imagen=char(answer(1));
     numberSeed=str2num(char(answer(2)));
     dist=str2num(char(answer(3)));
-    expansionSemillas(imagen,numberSeed,dist)
+    expansionSemillas(imagen,numberSeed,dist);
 end

@@ -35,16 +35,13 @@ M(:,:,5)=B;
 
 seeds=seedGenerator(M,numberSeed,dist);
 
-seeds
-
 subplot(1,3,2)
 imagesc(A)
 hold on
 
 for i=1:size(seeds,1)
-    seeds(i,1)
-    seeds(i,2)
-    circle(seeds(i,1)+1,seeds(i,2)+1,dist)
+
+    circle(seeds(i,1)+1,seeds(i,2)+1,dist);
 end
 scatter(seeds(:,1)+1,seeds(:,2)+1,35,[0 1 0],'filled')
 
