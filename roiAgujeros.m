@@ -30,29 +30,13 @@ M(:,:,3)=R;
 M(:,:,4)=G;
 M(:,:,5)=B;
 
-out=cc_from_seed(punto_inicial_x,punto_inicial_y,M);
+[out,cero_celdas,uno_celdas]=cc_from_seed(punto_inicial_x,punto_inicial_y,M);
 roi=out;
 
-cero_celdas=[];
 
-uno_celdas=[];
 
 num_dos_celdas=size(roi);
 num_dos_celdas=num_dos_celdas(1);
-
-for pix=1:num_dos_celdas
-    roi_sel=roi(pix,:);
-    roi_cero1=[roi_sel(1)+(0.5) roi_sel(2)+(0.5)];
-    roi_cero2=[roi_sel(1)-(0.5) roi_sel(2)-0.5];
-    roi_cero3=[roi_sel(1)-0.5 roi_sel(2)+0.5];
-    roi_cero4=[roi_sel(1)+0.5 roi_sel(2)-0.5];
-    roi_uno1=[roi_sel(1) roi_sel(2)+0.5];
-    roi_uno2=[roi_sel(1) roi_sel(2)-0.5];
-    roi_uno3=[roi_sel(1)-0.5 roi_sel(2)];
-    roi_uno4=[roi_sel(1)+0.5 roi_sel(2)];
-    cero_celdas=[cero_celdas;roi_cero1;roi_cero2;roi_cero3;roi_cero4];
-    uno_celdas=[uno_celdas;roi_uno1;roi_uno2;roi_uno3;roi_uno4];
-end
 
 
 cero_celdas=unique(cero_celdas,'rows');
@@ -75,7 +59,7 @@ hold on
 scatter(out(:,1)+1,out(:,2)+1,50,[1 0 1],'filled','square')
 
 msg = cell(6,1);
-msg{1} = sprintf('Número de Euler:%2.0f',abs(num_euler));
+msg{1} = sprintf('Número de Euler:%2.0f',num_euler);
 msg{2} = sprintf('Número de CC:%2.0f',1);
 msg{3} = sprintf('Número de Agujeros:%2.0f',num_agujeros);
 msg{4} = sprintf('Número de 0 celdas:%2.0f',num_cero_celdas);
