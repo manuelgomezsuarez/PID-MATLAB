@@ -10,7 +10,7 @@ if choice=='Euler, agujeros y ROI'
     definput = {'3x3.jpg','0','0'};
     answer = inputdlg(prompt,title,dims,definput)
 
-    imagen=char(answer(1))
+    imagen=strcat(char('pictures/'),char(answer(1)))
     x=str2num(char(answer(2)))
     y=str2num(char(answer(3)))
     [roi,euler,num_cc,num_agujeros]=roiAgujeros(imagen,x,y)
@@ -25,7 +25,7 @@ if char(choice)== 'Expansion de semillas'
     definput = {'espalda.jpg','70','5'};
     answer = inputdlg(prompt,title,dims,definput)
 
-    imagen=char(answer(1));
+    imagen=strcat(char('pictures/'),char(answer(1)))
     numberSeed=str2num(char(answer(2)));
     dist=str2num(char(answer(3)));
     expansionSemillas(imagen,numberSeed,dist);
